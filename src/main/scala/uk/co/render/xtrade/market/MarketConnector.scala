@@ -1,7 +1,7 @@
 package uk.co.render.xtrade.market
 
 import com.weiglewilczek.slf4s.Logging
-import uk.co.render.xtrade.model.{Success, ContributionStatus, Contribution}
+import uk.co.render.xtrade.model.{ContributionSuccess, ContributionStatus, Contribution}
 
 object MarketConnector {
 	def apply() = {
@@ -17,6 +17,6 @@ class BloomzergMarketConnector extends MarketConnector with Logging {
 
 	override def publish(contribution: Contribution) = {
 		logger.info(contribution.toString)
-		Success
+		ContributionSuccess
 	}
 }

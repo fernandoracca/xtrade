@@ -1,12 +1,15 @@
 package uk.co.render.xtrade.contribution
 
 import java.util.{GregorianCalendar, Calendar, Date}
-import uk.co.render.xtrade.model.{ContributionStatus, Contribution, Failure}
+import uk.co.render.xtrade.model.{ContributionStatus, Contribution, ContributionFailure}
 import uk.co.render.xtrade.market.{BloomzergMarketConnector, MarketConnector}
 
 object Contributor {
 	def apply():Contributor = {
-		return new InMemoryCacheContributor(marketConnector = MarketConnector())
+		return apply(marketConnector = MarketConnector())
+	}
+	def apply(marketConnector: MarketConnector):Contributor = {
+		return new InMemoryCacheContributor(marketConnector)
 	}
 }
 
@@ -19,7 +22,7 @@ class InMemoryCacheContributor(marketConnector: MarketConnector) extends Contrib
 	override def contribute(securityId: Int) = {
 		securityId match {
 			case 123456 => marketConnector.publish(buildContribution(securityId))
-			case _ => Failure;
+			case _ => ContributionFailure;
 		}
 	}
 

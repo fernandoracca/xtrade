@@ -1,3 +1,15 @@
 Simple trading example project to compare with ztrade, the Java counterpart. 
 
-Uses Specs2, SBT, SLF4S (logback through SLF4J)
+Uses
+	Scala 2.8.1
+	Specs2
+	JUnit
+	Mockito
+	SLF4S
+	SLF4j
+	Logback
+	SBT
+
+Acceptance testing using Specs2
+
+Highly recommended to build Intellij IDEA and/or SBT
