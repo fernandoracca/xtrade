@@ -2,7 +2,7 @@ package uk.co.render.xtrade.contribution
 
 import java.util.{GregorianCalendar, Calendar, Date}
 import uk.co.render.xtrade.model.{ContributionStatus, Contribution, Failure}
-import uk.co.render.xtrade.market.{BloombergMarketConnector, MarketConnector}
+import uk.co.render.xtrade.market.{BloomzergMarketConnector, MarketConnector}
 
 object Contributor {
 	def apply():Contributor = {

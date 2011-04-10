@@ -1,1 +1,3 @@
-This file was created by IntelliJ IDEA 10.0.3 for binding GitHub repository
+Simple trading example project to compare with ztrade, the Java counterpart. 
+
+Uses Specs2, SBT, SLF4S (logback through SLF4J)

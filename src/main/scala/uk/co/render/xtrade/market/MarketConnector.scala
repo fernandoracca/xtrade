@@ -5,7 +5,7 @@ import uk.co.render.xtrade.model.{Success, ContributionStatus, Contribution}
 
 object MarketConnector {
 	def apply() = {
-		new BloombergMarketConnector()
+		new BloomzergMarketConnector()
 	}
 }
 
@@ -13,7 +13,7 @@ abstract class MarketConnector {
 	def publish(contribution: Contribution): ContributionStatus
 }
 
-class BloombergMarketConnector extends MarketConnector with Logging {
+class BloomzergMarketConnector extends MarketConnector with Logging {
 
 	override def publish(contribution: Contribution) = {
 		logger.info(contribution.toString)
