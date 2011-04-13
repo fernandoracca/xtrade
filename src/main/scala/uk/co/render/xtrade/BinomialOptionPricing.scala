@@ -41,17 +41,16 @@ trait BinomialOptionPricing {
 	def payoff(asset: Double, strike: Double): Double
 
 	def calculateOptionValue(steps: Int, discountFactor: Double, p: Double, optionPayoffs: Array[Double]): Double = {
-		for (i <- steps until 0 by -1) {
-			for(j <- 0 until i) {
+		for (i <- steps until 0 by -1; j <- 0 until i) {
+//			for(j <- 0 until i) {
 				optionPayoffs(j) = (p * optionPayoffs(j + 1) + (1 - p) * optionPayoffs(j)) * discountFactor
-			}
+//			}
 		}
 		optionPayoffs(0)
 	}
 }
 
 case object CallOption extends BinomialOptionPricing {
-
  	def payoff(asset: Double, strike: Double): Double = asset match {
 		case asset if asset > strike => asset - strike
 		case _ => 0
@@ -59,7 +58,6 @@ case object CallOption extends BinomialOptionPricing {
 }
 
 case object PutOption extends BinomialOptionPricing {
-
 	def payoff(asset: Double, strike: Double): Double = asset match {
 		case asset if asset < strike => strike - asset
 		case _ => 0
