@@ -3,7 +3,7 @@ package uk.co.render.xtrade.contribution
 import org.specs2._
 import org.specs2.mock._
 import uk.co.render.xtrade.market.MarketConnector
-import uk.co.render.xtrade.model.{ContributionFailure, Contribution, ContributionSuccess}
+import uk.co.render.xtrade.model.{Contribution, ContributionFailure,ContributionSuccess}
 
 class InMemoryCacheContributorSpec  extends SpecificationWithJUnit { def is =
 
